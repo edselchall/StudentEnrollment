@@ -9,6 +9,17 @@ public class Instructor {
 	String PhoneNo;
 	String email;
 	
+	
+	
+	private Instructor(String last_name, String first_name, int dept_Id, String office, String phoneNo, String email) {
+		super();
+		Last_name = last_name;
+		First_name = first_name;
+		Dept_Id = dept_Id;
+		Office = office;
+		PhoneNo = phoneNo;
+		this.email = email;
+	}
 	public String getLast_name() {
 		return Last_name;
 	}

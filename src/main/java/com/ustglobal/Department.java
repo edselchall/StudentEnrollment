@@ -5,6 +5,13 @@ public class Department {
 	String Dept_Name;
 	String College;
 	
+	
+	private Department(int dept_Id, String dept_Name, String college) {
+		super();
+		Dept_Id = dept_Id;
+		Dept_Name = dept_Name;
+		College = college;
+	}
 	public int getDept_Id() {
 		return Dept_Id;
 	}
