@@ -12,6 +12,9 @@ public class Department {
 		Dept_Name = dept_Name;
 		College = college;
 	}
+	public Department() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getDept_Id() {
 		return Dept_Id;
 	}
