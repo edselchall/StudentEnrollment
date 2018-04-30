@@ -2,7 +2,6 @@ package com.ustglobal.StudentEnrollment.services;
 
 import static org.junit.Assert.*;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -28,7 +27,7 @@ public class StudentServiceTest {
 	
 	@Test
 	public void studentAddCourse() {
-		studentService.addCourse(mockStudent.getsId(), courseId);
+		studentService.addCourse(mockStudent.getsId(), 1);
 		Student dbStudent = studentService.getStudent(1);
 		String course = dbStudent.getCourse();
 		assertEquals("Math", course);
@@ -36,7 +35,7 @@ public class StudentServiceTest {
 
 	@Test
 	public void studentCanDropCourse() {
-		studentService.removeCourse(mockStudent.getsId(), courseId);
+		studentService.removeCourse(mockStudent.getsId(), 1);
 		Student dbStudent = studentService.getStudent(1);
 		String course = dbStudent.getCourse();
 		assertEquals("", course);
