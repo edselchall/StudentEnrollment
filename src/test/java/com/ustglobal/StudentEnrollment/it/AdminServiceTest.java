@@ -8,12 +8,14 @@ import org.junit.Test;
 
 import com.ustglobal.Course;
 import com.ustglobal.Instructor;
+import com.ustglobal.Section;
 import com.ustglobal.StudentEnrollment.services.AdminService;
 
 public class AdminServiceTest {
 	private Instructor mockInstructor;
 	private Course mockCourse;
 	private AdminService adminService;
+	private Section mockSection;
 	
 
 	@Before
@@ -56,15 +58,16 @@ public class AdminServiceTest {
 		adminService.dropInstructor(mockInstructor);
 		Instructor dbInstructor = adminService.getInstructor(1);
 		assertNull(dbInstructor);
-
-	}
-
-/*	@Test
-	public void adminCanAddSections() {
-
 	}
 
 	@Test
+	public void adminCanAddSections() {
+		adminService.addSection(mockSection);
+		Section dbSection = adminService.getSection();
+		assertNotNull(dbSection);		
+	}
+
+/*	@Test
 	public void adminCanDropSections() {
 
 	}

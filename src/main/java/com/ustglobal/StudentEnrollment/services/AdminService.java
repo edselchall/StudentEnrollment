@@ -1,9 +1,13 @@
 package com.ustglobal.StudentEnrollment.services;
 
+
 import com.ustglobal.Course;
 import com.ustglobal.Instructor;
+import com.ustglobal.Section;
 
 public class AdminService {
+	//private UserDao userDao;
+	
 
 	public void createCourse(Course mockCourse) {
 		// TODO Auto-generated method stub
@@ -45,5 +49,17 @@ public class AdminService {
 		// TODO Auto-generated method stub
 		
 	}
+
+	public void addSection(Section mocksection) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	public Section getSection() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
 
 }
