@@ -15,7 +15,7 @@ public class StudentTest {
 	}
 	
 	@Test
-	public void canSetCourse() {
+	public void canSetAndGetCourse() {
 		Student mockStudent = new Student();
 		mockStudent.setCourse("Java");
 		assertEquals("Java", mockStudent.getCourse());
