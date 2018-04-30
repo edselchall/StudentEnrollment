@@ -1,12 +1,12 @@
 package com.ustglobal;
 
-public class Courses {
+public class Course {
 	int CNO;
 	String Course_title;
 	int hours;
 	int Dept_Id;
 	
-	private Courses(int cNO, String course_title, int hours, int dept_Id) {
+	public Course(int cNO, String course_title, int hours, int dept_Id) {
 		super();
 		CNO = cNO;
 		Course_title = course_title;
