@@ -7,16 +7,20 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.ustglobal.Course;
+import com.ustglobal.Instructor;
 import com.ustglobal.StudentEnrollment.services.AdminService;
 
 public class AdminServiceTest {
+	private Instructor mockInstructor;
 	private Course mockCourse;
 	private AdminService adminService;
+	
 
 	@Before
 	public void setUp() throws Exception {
 		adminService = new AdminService();
 		mockCourse = new Course(1, "Java", 3, 1);
+		mockInstructor = new Instructor("Hall", "Edsel", 1, "Math", "123-4567","e@ok.com");
 	}
 
 	@Test
@@ -33,24 +37,29 @@ public class AdminServiceTest {
 		assertNull(dbCourse);
 	}
 
-	@Test
+	/*@Test
 	public void adminCanPrepareTermSchedule() {
 		adminService.PrepareTermSchedule();
-		
+		add code here
 
-	}
+	}*/
 
 	@Test
 	public void adminCanAddInstructors() {
-
+		adminService.addInstructor(mockInstructor);
+		Instructor dbInstructor = adminService.getInstructor(1);
+		assertNotNull(dbInstructor);
 	}
 
 	@Test
 	public void adminCanDropInstructors() {
+		adminService.dropInstructor(mockInstructor);
+		Instructor dbInstructor = adminService.getInstructor(1);
+		assertNull(dbInstructor);
 
 	}
 
-	@Test
+/*	@Test
 	public void adminCanAddSections() {
 
 	}
@@ -73,6 +82,6 @@ public class AdminServiceTest {
 	@Test
 	public void adminCanDeleteStudent() {
 
-	}
+	}*/
 
 }
