@@ -14,6 +14,9 @@ public class Student {
 	private int deptId;
 	private int creditHours;
 	private int gpa;
+	
+	
+	
 	public int getsId() {
 		return sId;
 	}

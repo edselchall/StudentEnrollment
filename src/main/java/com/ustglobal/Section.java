@@ -1,7 +1,5 @@
 package com.ustglobal;
 
-import java.util.ArrayList;
-
 public class Section {
 	private int term;
 	private int lineNo;
@@ -9,7 +7,7 @@ public class Section {
 	private String instrFname;
 	private String instrLname;
 	private int room;
-	private ArrayList<String> days;
+	private String days;
 	private String startTime;
 	private String endTime;
 	public int getTerm() {
@@ -48,10 +46,10 @@ public class Section {
 	public void setRoom(int room) {
 		this.room = room;
 	}
-	public ArrayList<String> getDays() {
+	public String getDays() {
 		return days;
 	}
-	public void setDays(ArrayList<String> days) {
+	public void setDays(String days) {
 		this.days = days;
 	}
 	public String getStartTime() {
