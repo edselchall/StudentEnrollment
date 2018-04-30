@@ -1,4 +1,4 @@
-package com.ustglobal.StudentEnrollment.it;
+package com.ustglobal.StudentEnrollment.services;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
