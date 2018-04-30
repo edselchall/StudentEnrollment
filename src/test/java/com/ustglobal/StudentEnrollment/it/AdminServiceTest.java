@@ -33,8 +33,8 @@ public class AdminServiceTest {
 	}
 
 	@Test
-	public void adminCanDropCourse() {
-		adminService.DropCourse(mockCourse);
+	public void adminCanDeleteCourse() {
+		adminService.deleteCourse(mockCourse);
 		Course dbCourse = adminService.getCourse(1);
 		assertNull(dbCourse);
 	}
@@ -47,28 +47,28 @@ public class AdminServiceTest {
 	}*/
 
 	@Test
-	public void adminCanAddInstructors() {
+	public void adminCanAddInstructor() {
 		adminService.addInstructor(mockInstructor);
 		Instructor dbInstructor = adminService.getInstructor(1);
 		assertNotNull(dbInstructor);
 	}
 
 	@Test
-	public void adminCanDropInstructors() {
+	public void adminCanDropInstructor() {
 		adminService.dropInstructor(mockInstructor);
 		Instructor dbInstructor = adminService.getInstructor(1);
 		assertNull(dbInstructor);
 	}
 
 	@Test
-	public void adminCanAddSections() {
+	public void adminCanAddSection() {
 		adminService.addSection(mockSection);
 		Section dbSection = adminService.getSection();
 		assertNotNull(dbSection);		
 	}
 
 /*	@Test
-	public void adminCanDropSections() {
+	public void adminCanDeleteSection() {
 
 	}
 

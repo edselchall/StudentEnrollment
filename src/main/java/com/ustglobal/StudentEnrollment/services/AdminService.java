@@ -19,7 +19,7 @@ public class AdminService {
 		return null;
 	}
 
-	public void DropCourse(Course mockCourse) {
+	public void deleteCourse(Course mockCourse) {
 		// TODO Auto-generated method stub
 		
 	}
