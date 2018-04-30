@@ -2,16 +2,16 @@ package com.ustglobal;
 
 
 public class Instructor {
-	String Last_name;
-	String First_name;
-	int Dept_Id;
-	String Office;
-	String PhoneNo;
-	String email;
+	private String Last_name;
+	private String First_name;
+	private int Dept_Id;
+	private String Office;
+	private String PhoneNo;
+	private String email;
 	
 	
 	
-	private Instructor(String last_name, String first_name, int dept_Id, String office, String phoneNo, String email) {
+	public Instructor(String last_name, String first_name, int dept_Id, String office, String phoneNo, String email) {
 		super();
 		Last_name = last_name;
 		First_name = first_name;
