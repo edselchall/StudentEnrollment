@@ -15,14 +15,29 @@ public class Student {
 	private int creditHours;
 	private int gpa;
 	
+	public Student(String firstName, String lastName, String course, String phone, String street, String city,
+			String state, int zip, String degree, int deptId, int creditHours, int gpa) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.course = course;
+		this.phone = phone;
+		this.street = street;
+		this.city = city;
+		this.state = state;
+		this.zip = zip;
+		this.degree = degree;
+		this.deptId = deptId;
+		this.creditHours = creditHours;
+		this.gpa = gpa;
+	}
 	
-	
+
+	public Student() {}
+
 	public int getsId() {
 		return sId;
 	}
-	public void setsId(int sId) {
-		this.sId = sId;
-	}
+
 	public String getFirstName() {
 		return firstName;
 	}
