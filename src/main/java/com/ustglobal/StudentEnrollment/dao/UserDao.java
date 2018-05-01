@@ -9,6 +9,7 @@ public interface UserDao {
 	
 	//Student Menu
 	public void register(Student student);
+	public Student getStudent(int sId);
 	public void addCourse(Student student, Course course);
 	public void dropCourse(Course course);
 	

@@ -18,7 +18,7 @@ public class ReportServiceTest {
 
 	@Test
 	public void studentCanRequestTranscript() {
-	
+		assertTrue(true);
 	}
 
 	@Test

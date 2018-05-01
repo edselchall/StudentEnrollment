@@ -13,7 +13,7 @@
 
 	<properties>
 		<java.version>1.8</java.version>
-		<servlet.port>8080</servlet.port>
+		<servlet.port>8087</servlet.port>
 		<spring.version>5.0.0.RELEASE</spring.version>
 		<cglib.version>2.2.2</cglib.version>
 		<maven.compiler.target>${java.version}</maven.compiler.target>
@@ -136,6 +136,7 @@
 			<plugin>
 				<artifactId>maven-compiler-plugin</artifactId>
 				<configuration>
+					<version>3.7.0</version>
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
