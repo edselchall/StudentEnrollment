@@ -8,16 +8,20 @@ import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.ustglobal.Course;
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
 
 public class UserDaoImpl implements UserDao {
 	
-	private DataSource dataSource;
+	@Autowired
+	DataSource dataSource;
 	
 	public void setDataSource(DataSource dataSource) {
 		this.dataSource = dataSource;
+		System.out.println("reached setting datasource");
 	}
 
 	@Override
