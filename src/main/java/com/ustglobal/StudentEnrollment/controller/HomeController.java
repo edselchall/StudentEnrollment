@@ -5,14 +5,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ustglobal.Student;
+import com.ustglobal.StudentEnrollment.services.StudentService;
+
 @Controller
 public class HomeController {
 
 	@RequestMapping(value="/hello")
 	public ModelAndView hello(@RequestParam(required=false, defaultValue="World") String name) {
+		StudentService studentService = new StudentService();
+		Student mockStudent = new Student("Erik", "Kurt", "Math", "123-4567", "123 Main Street", "Chicago",
+				"IL", 12345, "BS", 1, 1, 4);
+		
+		System.out.println(studentService);
+		System.out.println(mockStudent);
+		
+		
 		ModelAndView ret = new ModelAndView("home");
-		// Adds an object to be used in home.jsp
-		ret.addObject("name", name);
+
 		return ret;
 	}
 	@RequestMapping(value="/register")
