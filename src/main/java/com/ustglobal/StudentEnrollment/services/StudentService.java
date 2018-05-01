@@ -1,15 +1,18 @@
 package com.ustglobal.StudentEnrollment.services;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import com.ustglobal.Student;
-import com.ustglobal.StudentEnrollment.dao.impl.UserDaoImpl;
+import com.ustglobal.StudentEnrollment.dao.UserDao;
 
 public class StudentService {
 
-	private UserDaoImpl userDaoImpl;
+	@Autowired
+	private UserDao userDao;
 	
 	public void register(Student student) {
 		System.out.println("reached register method");
-		userDaoImpl.register(student);
+		userDao.register(student);
 	}
 
 	public Student getStudent(int i) {
