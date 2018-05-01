@@ -99,4 +99,9 @@ public class AdminService {
 		return null;
 	}
 
+	public void PrepareTermSchedule(Section mockSection) {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

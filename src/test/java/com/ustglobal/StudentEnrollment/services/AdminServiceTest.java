@@ -3,6 +3,8 @@ package com.ustglobal.StudentEnrollment.services;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
+import java.util.ArrayList;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -17,6 +19,7 @@ public class AdminServiceTest {
 	private Course mockCourse;
 	private AdminService adminService;
 	private Section mockSection;
+	
 
 	@Before
 	public void setUp() throws Exception {
@@ -39,12 +42,14 @@ public class AdminServiceTest {
 		assertNull(dbCourse);
 	}
 
-	/*
-	 * @Test public void adminCanPrepareTermSchedule() {
-	 * adminService.PrepareTermSchedule(); add code here
-	 * 
-	 * }
-	 */
+	
+	  @Test 
+	  public void adminCanPrepareTermSchedule() {
+		  ArrayList<Section>prepareTermSchedule = new ArrayList<Section>();
+		  adminService.PrepareTermSchedule(mockSection); 
+		  assertNotNull(mockSection);	  
+	  
+	  }	 
 
 	@Test
 	public void adminCanAddInstructor() {
