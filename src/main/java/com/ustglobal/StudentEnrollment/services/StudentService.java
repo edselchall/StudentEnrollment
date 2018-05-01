@@ -2,13 +2,14 @@ package com.ustglobal.StudentEnrollment.services;
 
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
+import com.ustglobal.StudentEnrollment.dao.impl.UserDaoImpl;
 
 public class StudentService {
 	
-	private UserDao userDao;
+	private UserDaoImpl userDao;
 	
 	public void register(Student student) {
-		userDaoImpl.register(student);
+		userDao.register(student);
 	}
 
 	public Student getStudent(int i) {
