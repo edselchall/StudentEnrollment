@@ -1,12 +1,11 @@
 package com.ustglobal.StudentEnrollment.dao.impl;
 
 import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.sql.DataSource;
+
+import org.springframework.jdbc.core.JdbcTemplate;
 
 import com.ustglobal.Course;
 import com.ustglobal.Student;
@@ -14,11 +13,10 @@ import com.ustglobal.StudentEnrollment.dao.UserDao;
 
 public class UserDaoImpl implements UserDao {
 	
-	private DataSource dataSource;
+	private JdbcTemplate jdbcTemplate;
 	
-	public void setDataSource(DataSource dataSource) {
-		this.dataSource = dataSource;
-		System.out.println("reached setting datasource");
+	public UserDaoImpl(DataSource dataSource) {
+		jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 
 	@Override
@@ -28,49 +26,23 @@ public class UserDaoImpl implements UserDao {
 					"PHONE, STREET, CITY, " + 
 					"STATE, ZIP, DEGREE, " +
 					"DEPT_ID, CREDIT_HOURS, GPA) " +
-					"VALUES (?,?,?,?,?,?,?,?,?,?)";
-		Connection conn = null;
+					"VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 		
-		try {
-			conn = dataSource.getConnection();
-			
-			PreparedStatement ps = conn.prepareStatement(sql);
-			
-			ps.setString(1, student.getFirstName());
-			ps.setString(2, student.getLastName());
-			ps.setString(3, student.getCourse());
-			ps.setString(4, student.getPhone());
-			ps.setString(5, student.getStreet());
-			ps.setString(6, student.getCity());
-			ps.setString(7, student.getState());
-			ps.setInt(8, student.getZip());
-			ps.setString(9, student.getDegree());
-			ps.setInt(10,  student.getDeptId());
-			ps.setInt(11,  student.getCreditHours());
-			ps.setInt(12, student.getGpa());
-			
-			ps.executeQuery();
-			ps.close();
-			
-		} catch(SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			if(conn != null) {
-				try {
-					conn.close();
-				} catch (SQLException e) {}
-			}
-			
-		}
-
+		jdbcTemplate.update(sql, student.getFirstName(), student.getLastName(),
+								student.getCourse(), student.getPhone(),
+								student.getStreet(), student.getCity(),
+								student.getState(), student.getZip(),
+								student.getDegree(), student.getDeptId(),
+								student.getCreditHours(), student.getGpa());
 	}
 	
 	@Override
 	public Student getStudent(int sId) {
 		String sql = "SELECT * FROM STUDENT WHERE S_ID = ?";
-		Connection conn = null;
+		//Connection conn = null;
+		return null;
 		
-		try {
+		/*try {
 			conn = dataSource.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
@@ -106,7 +78,7 @@ public class UserDaoImpl implements UserDao {
 					conn.close();
 				} catch(SQLException e) {}
 			}
-		}
+		}*/
 	}
 
 	@Override
