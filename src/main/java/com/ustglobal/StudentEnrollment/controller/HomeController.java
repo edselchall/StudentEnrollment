@@ -22,6 +22,13 @@ public class HomeController {
 		
 		
 		ModelAndView ret = new ModelAndView("home");
+
 		return ret;
+	}
+	@RequestMapping(value="/register")
+	public ModelAndView register() {
+		ModelAndView reg = new ModelAndView("registration");
+		return reg;
+		
 	}
 }
