@@ -2,6 +2,7 @@ package com.ustglobal.StudentEnrollment.dao;
 
 import java.util.ArrayList;
 
+import com.ustglobal.Course;
 import com.ustglobal.Student;
 
 public interface UserDao {
