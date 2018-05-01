@@ -21,6 +21,7 @@ public class StudentServiceTest {
 	@Test
 	public void studentCanRegister() {
 		studentService.register(mockStudent);
+		System.out.println(mockStudent.getFirstName());
 		Student dbStudent = studentService.getStudent(1);
 		assertNotNull(dbStudent);
 	}
