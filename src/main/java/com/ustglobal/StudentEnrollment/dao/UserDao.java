@@ -22,7 +22,7 @@ public interface UserDao {
 	public void addInstructor(Instructor instructor);
 	public void dropInstructor();
 	public void addSection(Section section);
-	public void deleteSection();
+	public void deleteSection(Section section);
 	public void updateSection();
 	public void addStudent();
 	public void deleteStudent();

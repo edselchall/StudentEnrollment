@@ -1,7 +1,10 @@
 package com.ustglobal;
 
+import org.springframework.jdbc.core.PreparedStatementSetter;
+
 public class Section {
 	private int term;
+	private int id;
 	private int lineNo;
 	private int cno;
 	private String instrFname;
@@ -63,6 +66,10 @@ public class Section {
 	}
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
+	}
+	public int getId() {
+		// TODO Auto-generated method stub
+		return id;
 	}
 	
 	

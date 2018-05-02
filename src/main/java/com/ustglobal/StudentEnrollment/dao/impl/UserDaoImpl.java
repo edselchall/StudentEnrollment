@@ -136,8 +136,10 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void deleteSection() {
-		// TODO Auto-generated method stub
+	public void deleteSection(Section section) {
+		String sql = "DELETE FROM SECTION WHERE ID =?";
+		jdbcTemplate.update(sql, section.getId());
+		
 
 	}
 
