@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.ustglobal.Course;
+import com.ustglobal.Instructor;
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
 
@@ -71,8 +72,7 @@ public class UserDaoImpl implements UserDao {
 		return student;
 			
 		
-		
-		
+				
 		
 		
 	}
@@ -89,14 +89,17 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void createCourse() {
-		
+	public void createCourse(Course course) {
+		String sql = "INSERT INTO (COURSE_TITLE, DEPARTMENT, DEPT_ID)";
+		jdbcTemplate.update(sql, course.getCourse_title(), course.getHours(),course.getDept_Id());
+								 		
 
 	}
 
 	@Override
-	public void deleteCourse() {
-		// TODO Auto-generated method stub
+	public void deleteCourse(Course course) {
+		String sql = "DELETE * FROM COURSE WHERE ID = ?";
+		jdbcTemplate.update(sql, course.getCNO());
 
 	}
 
@@ -107,8 +110,12 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void addInstructor() {
-		// TODO Auto-generated method stub
+	public void addInstructor(Instructor instructor) {
+		String sql = "SELECT * FROM INSTRUCTOR WHERE ID =?";
+		jdbcTemplate.update(sql, instructor.getFirst_name(), instructor.getLast_name(), 
+								 instructor.getDept_Id(), instructor.getOffice(), instructor.getPhoneNo(), 
+								 instructor.getEmail());
+		
 
 	}
 

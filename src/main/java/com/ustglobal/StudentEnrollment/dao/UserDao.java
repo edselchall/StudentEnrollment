@@ -3,6 +3,7 @@ package com.ustglobal.StudentEnrollment.dao;
 import java.util.ArrayList;
 
 import com.ustglobal.Course;
+import com.ustglobal.Instructor;
 import com.ustglobal.Student;
 
 public interface UserDao {
@@ -14,10 +15,10 @@ public interface UserDao {
 	public void dropCourse(Student student, Course course);
 	
 	//Admin Menu
-	public void createCourse();
-	public void deleteCourse();
+	public void createCourse(Course course);
+	public void deleteCourse(Course course);
 	public void prepareTermSchedule();
-	public void addInstructor();
+	public void addInstructor(Instructor instructor);
 	public void dropInstructor();
 	public void addSection();
 	public void deleteSection();
@@ -31,4 +32,6 @@ public interface UserDao {
 	public ArrayList<Student> getHonorsStudents();
 	public String requestTranscript(Student student);
 	public String getFeeReport();
+	
+	
 }
