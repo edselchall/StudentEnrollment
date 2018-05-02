@@ -1,11 +1,14 @@
 package com.ustglobal.StudentEnrollment.dao.impl;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
 import com.ustglobal.Course;
 import com.ustglobal.Student;
@@ -39,46 +42,39 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public Student getStudent(int sId) {
 		String sql = "SELECT * FROM STUDENT WHERE S_ID = ?";
-		//Connection conn = null;
-		return null;
+		Student student = new Student() ;
 		
-		/*try {
-			conn = dataSource.getConnection();
-			PreparedStatement ps = conn.prepareStatement(sql);
-			
-			ps.setInt(1, sId);
-			
-			Student student = null;
-			
-			ResultSet rs = ps.executeQuery();
-			if(rs.next()) {
-				student = new Student(
-					rs.getString("FIRST_NAME"),
-					rs.getString("LAST_NAME"), 
-					rs.getString("COURSE"),
-					rs.getString("PHONE"),
-					rs.getString("STREET"),
-					rs.getString("CITY"),
-					rs.getString("STATE"),
-					rs.getInt("ZIP"),
-					rs.getString("DEGREE"),
-					rs.getInt("DEPT_ID"),
-					rs.getInt("CREDIT_HOURS"),
-					rs.getInt("GPA")
-				);
+		
+		jdbcTemplate.query(sql, new RowMapper<Student>() {
+			@Override		
+			public Student mapRow(ResultSet result, int rowNum) throws SQLException {
+				
+				student.setsId(result.getInt("s_id"));
+				student.setFirstName(result.getString("first_name"));
+				student.setLastName(result.getString("last_name"));
+				student.setStreet(result.getString("street"));
+				student.setCity(result.getString("city"));
+				student.setState(result.getString("state"));
+				student.setZip(result.getInt("zip"));
+				student.setPhone(result.getString("phone"));
+				student.setCourse(result.getString("course"));
+				student.setGpa(result.getInt("gpa"));
+				student.setDeptId(result.getInt("dept_id"));
+				student.setDegree(result.getString("degree"));
+				student.setCreditHours(result.getInt("credit_hours"));
+				return student;
+				
 			}
-			rs.close();
-			ps.close();
-			return student;
-		} catch(SQLException e) {
-			throw new RuntimeException(e);
-		} finally {
-			if(conn != null) {
-				try {
-					conn.close();
-				} catch(SQLException e) {}
-			}
-		}*/
+			
+		});
+		//return student;
+		return student;
+			
+		
+		
+		
+		
+		
 	}
 
 	@Override
@@ -89,13 +85,13 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void dropCourse(Course course) {
-		// TODO Auto-generated method stub
-
+		
+		
 	}
 
 	@Override
 	public void createCourse() {
-		// TODO Auto-generated method stub
+		
 
 	}
 
