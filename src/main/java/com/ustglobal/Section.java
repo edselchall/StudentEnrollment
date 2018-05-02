@@ -68,7 +68,6 @@ public class Section {
 		this.endTime = endTime;
 	}
 	public int getId() {
-		// TODO Auto-generated method stub
 		return id;
 	}
 	
