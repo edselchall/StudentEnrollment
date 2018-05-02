@@ -13,6 +13,9 @@ public class Course {
 		this.hours = hours;
 		Dept_Id = dept_Id;
 	}
+	public Course() {
+		// TODO Auto-generated constructor stub
+	}
 	public int getCNO() {
 		return CNO;
 	}
