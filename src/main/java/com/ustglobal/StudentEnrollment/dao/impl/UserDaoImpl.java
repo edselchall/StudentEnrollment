@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.ustglobal.Course;
+import com.ustglobal.Instructor;
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
 
@@ -71,8 +72,7 @@ public class UserDaoImpl implements UserDao {
 		return student;
 			
 		
-		
-		
+				
 		
 		
 	}
@@ -110,8 +110,12 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void addInstructor() {
-		// TODO Auto-generated method stub
+	public void addInstructor(Instructor instructor) {
+		String sql = "SELECT * FROM INSTRUCTOR WHERE ID =?";
+		jdbcTemplate.update(sql, instructor.getFirst_name(), instructor.getLast_name(), 
+								 instructor.getDept_Id(), instructor.getOffice(), instructor.getPhoneNo(), 
+								 instructor.getEmail());
+		
 
 	}
 
