@@ -15,16 +15,22 @@
 
 <body class="text-center">
 
-	<form action="" class="form-signin">
+	<form action="register" method="post" class="form-signin" modelAttribute="student">
 		<h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
-		<input type="text" name="lname" class="form-control" placeholder="Last Name"><br>
-		<input type="text" name="fname" class="form-control" placeholder="First Name"><br>
+		<input type="text" name="lastName" class="form-control" placeholder="Last Name"><br>
+		<input type="text" name="firstName" class="form-control" placeholder="First Name"><br>
 		<input type="text" name="phone" class="form-control" placeholder="Phone Number"><br>
 		<input type="text" name="street" class="form-control" placeholder="Street Address"><br>
-		<input type="text" name="city" class="form-control" placeholder="City"><br> <input
-			type="text" name="state" class="form-control" placeholder="State"><br> <input
-			type="text" name="zip" class="form-control" placeholder="zip"><br> <input
-			type="submit" value="Submit">
+		<input type="text" name="city" class="form-control" placeholder="City"><br> 
+		<input type="text" name="state" class="form-control" placeholder="State"><br> 
+		<input type="text" name="zip" class="form-control" placeholder="zip"><br> 
+		<input type="text" name="course" class="form-control" placeholder="Course"><br>
+		<input type="text" name="degree" class="form-control" placeholder="Degree"><br>
+		<input type="text" name="deptId" class="form-control" placeholder="DeptID"><br>
+		<input type="text" name="creditHours" class="form-control" placeholder="Credit hours"><br>
+		<input type="text" name="gpa" class="form-control" placeholder="GPA"><br>
+		<input type="submit" value="Submit">
+			
 	</form>
 
 	
