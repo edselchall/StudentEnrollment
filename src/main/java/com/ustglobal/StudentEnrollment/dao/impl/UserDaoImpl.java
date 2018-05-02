@@ -89,16 +89,17 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void createCourse(Course courses) {
+	public void createCourse(Course course) {
 		String sql = "INSERT INTO (COURSE_TITLE, DEPARTMENT, DEPT_ID)";
-		jdbcTemplate.update(sql, courses.getCourse_title(), courses.getHours(),courses.getDept_Id());
+		jdbcTemplate.update(sql, course.getCourse_title(), course.getHours(),course.getDept_Id());
 								 		
 
 	}
 
 	@Override
-	public void deleteCourse() {
-		// TODO Auto-generated method stub
+	public void deleteCourse(Course course) {
+		String sql = "DELETE * FROM COURSE WHERE ID = ?";
+		jdbcTemplate.update(sql, course.getCNO());
 
 	}
 
