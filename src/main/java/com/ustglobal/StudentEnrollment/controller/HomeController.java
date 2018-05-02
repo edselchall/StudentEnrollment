@@ -18,6 +18,12 @@ public class HomeController {
 	@Autowired
 	UserDao userDao;
 	
+	@RequestMapping(value="/")
+	public ModelAndView home(ModelAndView model) {
+		model.setViewName("home");
+		return model;
+	}
+	
 	@RequestMapping(value="/newStudent")
 	public ModelAndView newStudent(ModelAndView model) {
 		Student newStudent = new Student();
