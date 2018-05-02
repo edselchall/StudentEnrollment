@@ -21,7 +21,7 @@ public class Instructor {
 		this.email = email;
 	}
 	
-		// TODO Auto-generated constructor stub
+		
 	public String getLast_name() {
 		return Last_name;
 	}
