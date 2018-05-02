@@ -19,6 +19,12 @@ public class HomeController {
 	@Autowired
 	UserDao userDao;
 	
+	@RequestMapping(value="/")
+	public ModelAndView home(ModelAndView model) {
+		model.setViewName("home");
+		return model;
+	}
+	
 	@RequestMapping(value="/newStudent")
 	public ModelAndView newStudent(ModelAndView model) {
 		Student newStudent = new Student();
@@ -34,9 +40,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/studentProfile/{id}")
-	public ModelAndView showStudent(@PathVariable String id) {
-		System.out.println(id);
-		return new ModelAndView("redirect:/");
+	public ModelAndView showStudent(@PathVariable int id, ModelAndView model) {
+		Student student = userDao.getStudent(id);
+		model.addObject(student);
+		model.setViewName("pro");
+		return model;
 	}
 	
 	@RequestMapping(value="/admin/newCourse")
@@ -45,8 +53,5 @@ public class HomeController {
 		model.addObject("course", newCourse);
 		model.setViewName("newCourse");
 		return model;
-		
-	
 	}
-	
 }
