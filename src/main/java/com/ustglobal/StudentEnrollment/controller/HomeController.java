@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -34,9 +33,9 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/studentProfile/{id}")
-	@ResponseBody
-	public String showStudent(@PathVariable String id) {
-		return "Get a specific student with id=" + id;
+	public ModelAndView showStudent(@PathVariable String id) {
+		System.out.println(id);
+		return new ModelAndView("redirect:/");
 	}
 	
 	
