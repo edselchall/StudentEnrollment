@@ -84,9 +84,8 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void dropCourse(Course course) {
-		
-		
+	public void dropCourse(Student student, Course course) {
+		// TODO Auto-generated method stub
 	}
 
 	@Override
