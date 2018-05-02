@@ -41,7 +41,7 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public Student getStudent(int sId) {
-		String sql = "SELECT * FROM STUDENT WHERE S_ID = ?";
+		String sql = "SELECT * FROM STUDENT WHERE S_ID = " + sId;
 		Student student = new Student() ;
 		
 		
