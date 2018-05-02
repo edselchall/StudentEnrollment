@@ -111,4 +111,10 @@ public class Student {
 		this.gpa = gpa;
 	}
 
+
+	public void setsId(int sId) {
+		this.sId = sId;
+		
+	}
+
 }
