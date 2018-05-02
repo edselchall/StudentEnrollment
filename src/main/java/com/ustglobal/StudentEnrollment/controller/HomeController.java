@@ -33,11 +33,11 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value="/studentProfile/{id}")
-	public ModelAndView showStudent(@PathVariable String id) {
-		System.out.println(id);
-		return new ModelAndView("redirect:/");
+	public ModelAndView showStudent(@PathVariable int id, ModelAndView model) {
+		Student student = userDao.getStudent(id);
+		model.addObject(student);
+		model.setViewName("pro");
+		return model;
 	}
-	
-	
 	
 }
