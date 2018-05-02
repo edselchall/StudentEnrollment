@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.ustglobal.Course;
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
 
@@ -38,6 +39,14 @@ public class HomeController {
 		return new ModelAndView("redirect:/");
 	}
 	
+	@RequestMapping(value="/admin/newCourse")
+	public ModelAndView newCourse(ModelAndView model) {
+		Course newCourse = new Course();
+		model.addObject("course", newCourse);
+		model.setViewName("newCourse");
+		return model;
+		
 	
+	}
 	
 }
