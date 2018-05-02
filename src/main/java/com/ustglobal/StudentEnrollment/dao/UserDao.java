@@ -15,7 +15,7 @@ public interface UserDao {
 	
 	//Admin Menu
 	public void createCourse(Course course);
-	public void deleteCourse();
+	public void deleteCourse(Course course);
 	public void prepareTermSchedule();
 	public void addInstructor();
 	public void dropInstructor();
@@ -31,4 +31,5 @@ public interface UserDao {
 	public ArrayList<Student> getHonorsStudents();
 	public String requestTranscript(Student student);
 	public String getFeeReport();
+	
 }
