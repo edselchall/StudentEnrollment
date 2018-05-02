@@ -12,6 +12,7 @@ import org.springframework.jdbc.core.RowMapper;
 
 import com.ustglobal.Course;
 import com.ustglobal.Instructor;
+import com.ustglobal.Section;
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
 
@@ -126,8 +127,11 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void addSection() {
-		// TODO Auto-generated method stub
+	public void addSection(Section section) {
+		String sql = "INSERT INTO (TERM, LINENO, CNO, INSTRFNAME, INSTRLNAME, ROOM, DAYS, STARTTIME,ENDTIME)";
+		jdbcTemplate.update(sql, section.getTerm(), section.getLineNo(), section.getCno(), section.getInstrFname(),
+								section.getInstrLname(), section.getRoom(), section.getDays(), section.getStartTime(),
+								section.getEndTime());		
 
 	}
 

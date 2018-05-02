@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.ustglobal.Course;
 import com.ustglobal.Instructor;
+import com.ustglobal.Section;
 import com.ustglobal.Student;
 
 public interface UserDao {
@@ -20,7 +21,7 @@ public interface UserDao {
 	public void prepareTermSchedule();
 	public void addInstructor(Instructor instructor);
 	public void dropInstructor();
-	public void addSection();
+	public void addSection(Section section);
 	public void deleteSection();
 	public void updateSection();
 	public void addStudent();
