@@ -89,8 +89,10 @@ public class UserDaoImpl implements UserDao {
 	}
 
 	@Override
-	public void createCourse() {
-		
+	public void createCourse(Course courses) {
+		String sql = "INSERT INTO (COURSE_TITLE, DEPARTMENT, DEPT_ID)";
+		jdbcTemplate.update(sql, courses.getCourse_title(), courses.getHours(),courses.getDept_Id());
+								 		
 
 	}
 

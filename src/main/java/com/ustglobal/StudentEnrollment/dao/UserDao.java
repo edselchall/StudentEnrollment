@@ -14,7 +14,7 @@ public interface UserDao {
 	public void dropCourse(Student student, Course course);
 	
 	//Admin Menu
-	public void createCourse();
+	public void createCourse(Course course);
 	public void deleteCourse();
 	public void prepareTermSchedule();
 	public void addInstructor();
