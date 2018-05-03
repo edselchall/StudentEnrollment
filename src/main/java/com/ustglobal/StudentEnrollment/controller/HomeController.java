@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.ustglobal.Course;
+import com.ustglobal.Department;
 import com.ustglobal.Student;
 import com.ustglobal.StudentEnrollment.dao.UserDao;
 
@@ -82,5 +83,21 @@ public class HomeController {
 		userDao.createCourse(course);
 		System.out.println(course.getCourse_title());
 		return new ModelAndView("redirect:/admin");
+	}
+	
+	@RequestMapping(value="/admin/newDepartment")
+	public ModelAndView newDepartment(ModelAndView model) {
+		Department newDepartment = new Department();
+		model.addObject("Departent", newDepartment);
+		model.setViewName("newDepartment");
+		return model;
+	}
+	
+	@RequestMapping(value="/admin/createDepartment")
+	public ModelAndView createDepartment(@ModelAttribute Department department) {
+		userDao.createDepartment(department);
+		return new ModelAndView("redirect:/admin");
+		
+	
 	}
 }
