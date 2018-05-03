@@ -16,7 +16,7 @@
 			<th>Name</th>
 			<th>Credit Hours</th>
 		</tr>
-		<c:forEach items="${courses}" var="course">
+		<c:forEach  var="course" items="${courses}">
 	    	<tr>	
 				<td>${course.course_title}</td>
 	    		<td>Credit Hours: ${course.hours}</td>
