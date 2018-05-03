@@ -1,9 +1,9 @@
 package com.ustglobal.StudentEnrollment.dao.impl;
 
-import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -70,10 +70,6 @@ public class UserDaoImpl implements UserDao {
 		});
 		//return student;
 		return student;
-			
-		
-				
-		
 		
 	}
 
@@ -86,6 +82,30 @@ public class UserDaoImpl implements UserDao {
 	@Override
 	public void dropCourse(Student student, Course course) {
 		// TODO Auto-generated method stub
+	}
+	
+	@Override
+	public List<Course> getStudentCourses(int sId) {
+		String sql = "SELECT course.c_no, course.course_title, course.hours, section.instrFname, "
+				+ "section.room, section.days, section.start_time, section.end_time "
+				+ "FROM course "
+				+ "JOIN section ON section.c_no = course.c_no "
+				+ "JOIN enrollment ON section.line_no = enrollment.line_no "
+				+ "JOIN student ON enrollment.s_id = student.s_id "
+				+ "WHERE student.s_id = " + sId;
+		
+		return jdbcTemplate.query(sql, new RowMapper<Course>() {
+
+			@Override
+			public Course mapRow(ResultSet rs, int rowNum) throws SQLException {
+				Course course = new Course();
+				course.setCNO(rs.getInt(1));
+				course.setCourse_title(rs.getString(2));
+				course.setHours(rs.getShort(3));
+				
+				return course;
+			}
+		});
 	}
 
 	@Override
@@ -184,5 +204,7 @@ public class UserDaoImpl implements UserDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	
 
 }
