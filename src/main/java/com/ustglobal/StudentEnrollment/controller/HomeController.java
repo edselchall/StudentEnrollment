@@ -76,4 +76,11 @@ public class HomeController {
 		model.setViewName("newCourse");
 		return model;
 	}
+		
+	@RequestMapping(value="/admin/createCourse")
+	public ModelAndView createCourse(@ModelAttribute Course course) {
+		userDao.createCourse(course);
+		System.out.println(course.getCourse_title());
+		return new ModelAndView("redirect:/admin");
+	}
 }
