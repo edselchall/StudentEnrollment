@@ -11,6 +11,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import com.ustglobal.Course;
+import com.ustglobal.Department;
 import com.ustglobal.Instructor;
 import com.ustglobal.Section;
 import com.ustglobal.Student;
@@ -209,6 +210,16 @@ public class UserDaoImpl implements UserDao {
 	public String getFeeReport() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public void createDepartment(Department department) {
+		String sql = "INSERT INTO DEPARTMENT (DEPT_NAME, COLLEGE) VALUES (?,?)";
+		jdbcTemplate.update(sql, department.getDept_Name(), department.getCollege());
+		
+		
+		
+		
 	}
 
 	
