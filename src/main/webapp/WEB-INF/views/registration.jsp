@@ -45,7 +45,7 @@
         <a class="navbar-brand">
         	<div ui-include="'./resources/assets/images/logo.svg'"></div>
         	<img src="./resources/assets/images/logo.png" alt="." class="hide">
-        	<span class="hidden-folded inline">Admin Panel</span>
+        	<span class="hidden-folded inline">South Harmon</span>
         </a>
         <!-- / brand -->
       </div>

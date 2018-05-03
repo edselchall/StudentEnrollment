@@ -44,21 +44,17 @@ public class HomeController {
 	@RequestMapping(value="/studentProfile/{id}")
 	public ModelAndView showStudent(@PathVariable int id, ModelAndView model) {
 		Student student = userDao.getStudent(id);
+		List<Course> courses = userDao.getStudentCourses(id);
 		model.addObject(student);
+		model.addObject("courses", courses);
 		model.setViewName("pro");
 		return model;
 	}
 	
 	@RequestMapping(value="/studentProfile/{id}/courses")
 	public ModelAndView showStudentCourses(@PathVariable int id, ModelAndView model) {
-		System.out.println(id);
-		Student student = userDao.getStudent(id);
-		System.out.println(student);
 		List<Course> courses = userDao.getStudentCourses(id);
-		System.out.println(courses);
-		
 		model.addObject("courses", courses);
-		
 		model.setViewName("student-courses");
 		return model;
 	}
