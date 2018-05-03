@@ -1,5 +1,7 @@
 package com.ustglobal.StudentEnrollment.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -44,6 +46,26 @@ public class HomeController {
 		Student student = userDao.getStudent(id);
 		model.addObject(student);
 		model.setViewName("pro");
+		return model;
+	}
+	
+	@RequestMapping(value="/studentProfile/{id}/courses")
+	public ModelAndView showStudentCourses(@PathVariable int id, ModelAndView model) {
+		System.out.println(id);
+		Student student = userDao.getStudent(id);
+		System.out.println(student);
+		List<Course> courses = userDao.getStudentCourses(id);
+		System.out.println(courses);
+		
+		model.addObject("courses", courses);
+		
+		model.setViewName("student-courses");
+		return model;
+	}
+	
+	@RequestMapping(value="/admin")
+	public ModelAndView admin(ModelAndView model) {
+		model.setViewName("admin");
 		return model;
 	}
 	

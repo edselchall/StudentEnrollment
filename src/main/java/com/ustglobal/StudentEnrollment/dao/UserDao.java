@@ -1,6 +1,7 @@
 package com.ustglobal.StudentEnrollment.dao;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import com.ustglobal.Course;
 import com.ustglobal.Instructor;
@@ -14,6 +15,7 @@ public interface UserDao {
 	public Student getStudent(int sId);
 	public void addCourse(Student student, Course course);
 	public void dropCourse(Student student, Course course);
+	public List<Course> getStudentCourses(int sId);
 	
 	//Admin Menu
 	public void createCourse(Course course);

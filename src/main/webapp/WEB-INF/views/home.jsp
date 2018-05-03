@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="./assets/product.css" rel="stylesheet">
+    <link href="./resources/assets/product.css" rel="stylesheet">
   </head>
 
   <body>
@@ -29,7 +29,7 @@
         <a class="py-2 d-none d-md-inline-block" href="#">Courses</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Register</a>
         <a class="py-2 d-none d-md-inline-block" href="#">Instructors</a>
-        <a class="py-2 d-none d-md-inline-block" href="#">Admin</a>
+        <a class="py-2 d-none d-md-inline-block" href="admin">Admin</a>
       </div>
     </nav>
 
