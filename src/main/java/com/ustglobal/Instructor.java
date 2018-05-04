@@ -1,5 +1,6 @@
 package com.ustglobal;
 
+import org.springframework.jdbc.core.PreparedStatementSetter;
 
 public class Instructor {
 	private String Last_name;
@@ -57,6 +58,12 @@ public class Instructor {
 	}
 	public void setEmail(String email) {
 		this.email = email;
+	}
+
+
+	public static PreparedStatementSetter getId() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

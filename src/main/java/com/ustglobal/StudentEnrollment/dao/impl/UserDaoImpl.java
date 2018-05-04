@@ -143,7 +143,8 @@ public class UserDaoImpl implements UserDao {
 
 	@Override
 	public void dropInstructor() {
-		// TODO Auto-generated method stub
+		String sql = "DELETE FROM INSTRUCTOR WHERE ID =?";
+		jdbcTemplate.update(sql, Instructor.getId());
 
 	}
 
