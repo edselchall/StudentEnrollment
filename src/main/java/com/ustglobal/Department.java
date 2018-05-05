@@ -6,11 +6,14 @@ public class Department {
 	String College;
 	
 	
-	private Department(int dept_Id, String dept_Name, String college) {
+	public Department(int dept_Id, String dept_Name, String college) {
 		super();
 		Dept_Id = dept_Id;
 		Dept_Name = dept_Name;
 		College = college;
+	}
+	public Department() {
+		// TODO Auto-generated constructor stub
 	}
 	public int getDept_Id() {
 		return Dept_Id;
