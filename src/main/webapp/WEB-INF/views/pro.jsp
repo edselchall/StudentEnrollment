@@ -203,11 +203,11 @@
       <div class="col-sm-8 col-lg-9">
         <div class="tab-content">      
           <div class="tab-pane p-v-sm active" id="tab_1">
-            <div class="streamline b-l m-b m-l">
+            
               
               <%@include file="student-courses.jsp" %>
               
-            </div>
+            
           </div>
           <div class="tab-pane p-v-sm" id="tab_2">
             <div class="streamline b-l m-b m-l">
